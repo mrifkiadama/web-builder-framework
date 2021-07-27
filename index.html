@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grapes JS Example</title>
+
+    <!-- Link CSS PLUGIN GRAPES JS -->
+    <link rel="stylesheet" href="/assets/css/lib/grapes.min.css" />
+
+
+
+    <!-- INSTALL PLUGIN GRAPES JS -->
+    <script type="text/javascript" src="/assets/js/lib/grapes.min.js"></script>
+    <script src="/assets/js/lib/grapesjs-plugin-export.min.js "></script>
+
+    <script src="/assets/js/lib/grapesjs-blocks-basic.js"></script>
+    <script src="/assets/js/lib/grapesjs-navbar.min.js"></script>
+    <script src="/assets/js/lib/grapesjs-tabs.min.js"></script>
+    <script src="/assets/js/lib/grapesjs-component-countdown.min.js"></script>
+
+    <!-- Assets Bootstrap version 5 -->
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css" />
+    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="/assets//js/lib/pooper.min.js"></script>
+
+    <!-- Add Style and Script for Preset Webpage Builder -->
+    <!-- <script src="/assets/js/lib/grapesjs-preset-webpage.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/lib/grapesjs-preset-webpage.min.css"> -->
+
+    <!-- CSS CUSTOM  -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+    <!-- <div id="editor">
+        <p>Testing Editor Using Grapes JS</p>
+    </div> -->
+
+    <div id="navbar" class="sidenav d-flex flex-column overflow-scroll">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h3 logo"> BALEOMOL LP </span>
+            </div>
+        </nav>
+        <div class="my-2 d-flex flex-column">
+            <button type="button" class="btn btn-outline-secondary btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#addPageModal">
+          <i class="fa fa-plus"></i> Add Page
+        </button>
+
+            <ul class="list-group pages">
+                <li class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            ">
+                    HOME
+                    <div class="m-2">
+                        <button class="btn btn-sm btn-outline-primary">
+                <i class="fa fa-pencil"></i>
+              </button>
+                        <button class="btn btn-sm btn-outline-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+                    </div>
+                </li>
+                <li class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            ">
+                    CONTACT
+                    <div class="m-2">
+                        <button class="btn btn-sm btn-outline-primary">
+                <i class="fa fa-pencil"></i>
+              </button>
+                        <button class="btn btn-sm btn-outline-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+                    </div>
+                </li>
+                <li class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            ">
+                    ABOUT US
+                    <div class="m-2">
+                        <button class="btn btn-sm btn-outline-primary">
+                <i class="fa fa-pencil"></i>
+              </button>
+                        <button class="btn btn-sm btn-outline-danger">
+                <i class="fa fa-trash"></i>
+              </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="block-tab" data-bs-toggle="tab" data-bs-target="#block" aria-selected="true" aria-controls="block">
+              <i class="fa fa-cubes"></i>
+            </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="layer-tab" data-bs-toggle="tab" data-bs-target="#layer" aria-selected="true" aria-controls="layer">
+              <i class="fa fa-tasks"></i>
+            </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="style-tab" data-bs-toggle="tab" data-bs-target="#style" aria-selected="true" aria-controls="style">
+              <i class="fa fa-paint-brush"></i>
+            </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="trait-tab" data-bs-toggle="tab" data-bs-target="#trait" aria-selected="true" aria-controls="trait">
+              <i class="fa fa-cog"></i>
+            </button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="block" role="tabpanel" aria-labelledby="block-tab">
+                    <div id="blocks"></div>
+                </div>
+                <div class="tab-pane fade" id="layer" role="tabpanel" aria-labelledby="layer-tab">
+                    <div id="layers-container"></div>
+                </div>
+                <div class="tab-pane fade" id="style" role="tabpanel" aria-labelledby="style-tab">
+                    <div id="styles-container"></div>
+                </div>
+                <div class="tab-pane fade" id="trait" role="tabpanel" aria-labelledby="trait-tab">
+                    <div id="trait-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                <div class="panel__devices"></div>
+                <div class="panel__basic-actions"></div>
+            </div>
+        </nav>
+
+        <div id="editor"></div>
+        <div class="modal fade" id="addPageModal" tabindex="-1" aria-labelledby="addPageModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="create-page" novalidate onsubmit="return validateForm(event)">
+                        <div class="modal-header">
+                            <h5 class="modal-tittle" id="addPageModalLabel">
+                                Buat Website
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close" onclick="clearForm()"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-auto">
+                                <label for="name" class="form-label">Nama Website</label>
+                                <input type="text" name="name" id="name" class="form-control form-control-sm" placeholder="Nama Website anda" required />
+                                <div class="invalid-feedback">
+                                    Silahkan masukkan nama website anda
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" onclick="clearForm()">
+                  Close
+                </button>
+                            <button type="submit" class="btn btn-primary btn-sm">
+                  Save
+                </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+
+</html>
